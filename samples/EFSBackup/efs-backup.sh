@@ -33,6 +33,12 @@ echo "sudo mount -t nfs -o nfsvers=4.1 -o rsize=1048576 -o wsize=1048576 -o time
 sudo mount -t nfs -o nfsvers=4.1 -o rsize=1048576 -o wsize=1048576 -o timeo=600 -o retrans=2 -o hard $source /backup
 echo "sudo mount -t nfs -o nfsvers=4.1 -o rsize=1048576 -o wsize=1048576 -o timeo=600 -o retrans=2 -o hard $destination /mnt/backups"
 sudo mount -t nfs -o nfsvers=4.1 -o rsize=1048576 -o wsize=1048576 -o timeo=600 -o retrans=2 -o hard $destination /mnt/backups
+echo "df -h"
+df -h
+echo "ls /backup"
+ls /backup
+echo "ls /mnt/backups"
+ls /mnt/backups
 
 # we need to decrement retain because we start counting with 0 and we need to remove the oldest backup
 let "retain=$retain-1"
