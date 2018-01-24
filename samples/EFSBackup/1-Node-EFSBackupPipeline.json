@@ -53,7 +53,7 @@
   "parameters" : [
     {
       "id" : "myShellCmd",
-      "default" : "wget https://raw.githubusercontent.com/awslabs/data-pipeline-samples/master/samples/EFSBackup/efs-backup.sh\nchmod a+x efs-backup.sh\n./efs-backup.sh $1 $2 $3 $4 $5",
+      "default" : "wget https://raw.githubusercontent.com/tejlibre/data-pipeline-samples/master/samples/EFSBackup/efs-backup.sh\nchmod a+x efs-backup.sh\n./efs-backup.sh $1 $2 $3 $4 $5",
       "description" : "Shell command to run.",
       "type" : "String"
     },
