@@ -80,8 +80,8 @@ if [ ! -d /mnt/backups/efsbackup-logs ]; then
 fi
 echo "sudo rm /tmp/efs-backup.log"
 sudo rm /tmp/efs-backup.log
-echo "sudo rsync -ah --stats --delete --numeric-ids --log-file=/tmp/efs-backup.log /backup/ /mnt/backups/$efsid/$interval.0/ --exclude=srv/sodexo/big_file_for_efs_performance"
-sudo rsync -ah --stats --delete --numeric-ids --log-file=/tmp/efs-backup.log /backup/ /mnt/backups/$efsid/$interval.0/ --exclude=srv/sodexo/big_file_for_efs_performance
+echo "sudo rsync -ah --stats --delete --numeric-ids --whole-file --log-file=/tmp/efs-backup.log /backup/ /mnt/backups/$efsid/$interval.0/ --exclude=srv/sodexo/big_file_for_efs_performance"
+sudo rsync -ah --stats --delete --numeric-ids --whole-file --log-file=/tmp/efs-backup.log /backup/ /mnt/backups/$efsid/$interval.0/ --exclude=srv/sodexo/big_file_for_efs_performance
 rsyncStatus=$?
 echo "sudo cp /tmp/efs-backup.log /mnt/backups/efsbackup-logs/$efsid-`date +%Y%m%d-%H%M`.log"
 sudo cp /tmp/efs-backup.log /mnt/backups/efsbackup-logs/$efsid-`date +%Y%m%d-%H%M`.log
